@@ -10,13 +10,11 @@ namespace burgershack.Controllers
   [ApiController]
   public class BurgersController : ControllerBase
   {
-
     public List<Burger> Burgers = new List<Burger>(){
       new Burger("Bacon", 1.25, "b1"),
       new Burger("Cheese", 1.00, "b2"),
       new Burger("Double-Cheese", 1.50, "b3"),
     };
-
     // GET api/burgers
     [HttpGet]
     public ActionResult<IEnumerable<Burger>> Get()
@@ -24,7 +22,6 @@ namespace burgershack.Controllers
       // return new string[] { "value1", "value2" };
       return Ok(Burgers);
     }
-
     // GET api/burgers/5
     [HttpGet("{id}")]
     public ActionResult<string> Get(int id)
@@ -39,7 +36,6 @@ namespace burgershack.Controllers
         return BadRequest(e);
       }
     }
-
     // POST api/burgers
     [HttpPost]
     // public void Post([FromBody] string value)
@@ -48,13 +44,11 @@ namespace burgershack.Controllers
       Burgers.Add(newBurger);
       return Ok(Burgers);
     }
-
     // PUT api/burgers/5
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
     }
-
     // DELETE api/values/5
     [HttpDelete("{id}")]
     public ActionResult Delete(string id)

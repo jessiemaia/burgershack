@@ -11,13 +11,11 @@ namespace sideshack.Controllers
   [ApiController]
   public class SidesController : ControllerBase
   {
-
     public List<Side> Sides = new List<Side>(){
       new Side("Fries", .50, "s1"),
       new Side("Tots", .50, "s2"),
       new Side("Salad", 1.50, "s3"),
     };
-
     // GET api/sides
     [HttpGet]
     public ActionResult<IEnumerable<Side>> Get()

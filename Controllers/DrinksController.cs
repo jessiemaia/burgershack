@@ -11,13 +11,11 @@ namespace drinkshack.Controllers
   [ApiController]
   public class DrinksController : ControllerBase
   {
-
     public List<Drink> Drinks = new List<Drink>(){
       new Drink("Soda", .50, "d1"),
       new Drink("Juice", 1.00, "d2"),
       new Drink("Water", 1.50, "d3"),
     };
-
     // GET api/drinks
     [HttpGet]
     public ActionResult<IEnumerable<Drink>> Get()
@@ -49,13 +47,11 @@ namespace drinkshack.Controllers
       Drinks.Add(newDrink);
       return Ok(Drinks);
     }
-
     // PUT api/drinks/5
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
     }
-
     // DELETE api/values/5
     [HttpDelete("{id}")]
     public ActionResult Delete(string id)
